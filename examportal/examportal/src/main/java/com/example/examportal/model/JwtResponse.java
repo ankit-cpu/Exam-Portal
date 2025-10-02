@@ -1,6 +1,6 @@
 package com.example.examportal.model;
 
-public class JwtResponse {
+public class  JwtResponse {
 
     String token;
 
