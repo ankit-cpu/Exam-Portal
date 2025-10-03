@@ -18,13 +18,17 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true)
-public class MySecurityConfig  {
+public class MySecurityConfig {
+
+    @Autowired
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Autowired
     private JwtAuthenticationEntryPoint unauthorizedHandler;
 
     @Autowired
     private UserDetailsServiceImpl userDetailsServiceImpl;
+
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
